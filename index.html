@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Copi Creative — Conversion Copywriting | copicreative.co</title>
+<title>Copi Creative | Conversion Copywriting | copicreative.co</title>
 <meta name="description" content="Conversion copywriter for med spas, real estate agents, food brands, healthcare practices, and consultants. Copy that books clients, converts leads, and grows revenue.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -165,7 +165,7 @@ nav {
 }
 .btn-secondary:hover { gap: 9px; }
 
-/* HERO RIGHT — CARD */
+/* HERO RIGHT - CARD */
 .hero-card {
   background: var(--white);
   border-radius: var(--r-xl);
@@ -397,7 +397,7 @@ nav {
 }
 
 /* ── PORTFOLIO ── */
-.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .port-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -439,6 +439,74 @@ nav {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials-bg { background: var(--white); border-top: 1px solid var(--border); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.testimonial-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-stars { color: var(--blue); font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+.testimonial-quote {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--dark);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.testimonial-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+.testimonial-name { font-size: 13px; font-weight: 600; color: var(--dark); }
+.testimonial-role { font-size: 11px; color: var(--muted); }
+.testimonial-card.pending {
+  border: 1px dashed var(--border-blue);
+  background: var(--blue-xlight);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 220px;
+}
+.testimonial-pending-text {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.testimonial-pending-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--white);
+  border: 1px solid var(--border-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin: 0 auto 14px;
+}
+
+@media (max-width: 768px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
 }
 
 /* ── PROCESS ── */
@@ -599,6 +667,7 @@ footer {
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#portfolio">Portfolio</a>
+    <a href="#testimonials">Reviews</a>
     <a href="#process">Process</a>
     <a href="mailto:hello@copicreative.co" class="nav-cta">Book a call →</a>
   </div>
@@ -612,7 +681,7 @@ footer {
       <div class="hero-headline">Your copy is</div>
       <span class="hero-rotating" id="rotatingText">costing you clients.</span>
       <div class="hero-fix">Let's fix that.</div>
-      <p class="hero-sub">We write website copy, email sequences, and ad campaigns for businesses that are serious about converting more leads. You bring the business — I bring the words that close.</p>
+      <p class="hero-sub">We write website copy, email sequences, and ad campaigns for businesses that are serious about converting more leads. You bring the business. I bring the words that close.</p>
       <div class="hero-actions">
         <a href="mailto:hello@copicreative.co" class="btn-primary">Book a free 15-min call →</a>
         <a href="#portfolio" class="btn-secondary">See my work ↓</a>
@@ -629,7 +698,7 @@ footer {
         <div class="arrow-row">↓</div>
         <div class="ba-row after-row">
           <div class="ba-tag">✦ After</div>
-          <div class="ba-text">Results that look like you — just more rested. Our specialists make sure no one knows you had anything done.</div>
+          <div class="ba-text">Results that look like you, just more rested. Our specialists make sure no one knows you had anything done.</div>
         </div>
       </div>
       <div class="hero-card-result">
@@ -643,22 +712,16 @@ footer {
 <!-- NICHE STRIP -->
 <div class="niche-strip">
   <div class="niche-track" id="nicheTrack">
-    <div class="niche-item"><span class="niche-dot"></span>Med Spas</div>
-    <div class="niche-item"><span class="niche-dot"></span>Real Estate</div>
-    <div class="niche-item"><span class="niche-dot"></span>Food Brands</div>
-    <div class="niche-item"><span class="niche-dot"></span>Healthcare</div>
-    <div class="niche-item"><span class="niche-dot"></span>Consultants</div>
-    <div class="niche-item"><span class="niche-dot"></span>SaaS & Tech</div>
-    <div class="niche-item"><span class="niche-dot"></span>eCommerce</div>
-    <div class="niche-item"><span class="niche-dot"></span>Fitness & Wellness</div>
-    <div class="niche-item"><span class="niche-dot"></span>Med Spas</div>
-    <div class="niche-item"><span class="niche-dot"></span>Real Estate</div>
-    <div class="niche-item"><span class="niche-dot"></span>Food Brands</div>
-    <div class="niche-item"><span class="niche-dot"></span>Healthcare</div>
-    <div class="niche-item"><span class="niche-dot"></span>Consultants</div>
-    <div class="niche-item"><span class="niche-dot"></span>SaaS & Tech</div>
-    <div class="niche-item"><span class="niche-dot"></span>eCommerce</div>
-    <div class="niche-item"><span class="niche-dot"></span>Fitness & Wellness</div>
+    <div class="niche-item"><span class="niche-dot"></span>Home Services</div>
+    <div class="niche-item"><span class="niche-dot"></span>Mortgage Brokers</div>
+    <div class="niche-item"><span class="niche-dot"></span>Dentists</div>
+    <div class="niche-item"><span class="niche-dot"></span>Insurance Agents</div>
+    <div class="niche-item"><span class="niche-dot"></span>Veterinary</div>
+    <div class="niche-item"><span class="niche-dot"></span>Home Services</div>
+    <div class="niche-item"><span class="niche-dot"></span>Mortgage Brokers</div>
+    <div class="niche-item"><span class="niche-dot"></span>Dentists</div>
+    <div class="niche-item"><span class="niche-dot"></span>Insurance Agents</div>
+    <div class="niche-item"><span class="niche-dot"></span>Veterinary</div>
   </div>
 </div>
 
@@ -689,15 +752,22 @@ footer {
   <div class="services-inner">
     <div class="section-eyebrow">What I do</div>
     <h2 class="section-title">Copy for every part<br>of your business</h2>
-    <p class="section-sub">From the first word on your homepage to the email that closes the sale — I write it all.</p>
+    <p class="section-sub">From the first word on your homepage to the email that closes the sale. I write it all.</p>
 
     <div class="services-grid">
 
       <div class="service-card featured">
         <span class="service-badge">Most popular</span>
         <div class="service-icon">🌐</div>
+        <div class="service-name">Homepage Rewrite</div>
+        <div class="service-desc">Full homepage rewrite with headline, subheadline, services, trust signals, and CTA. Built to convert visitors into leads from the first scroll.</div>
+        <div class="service-price">From $400</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📄</div>
         <div class="service-name">Website Copy</div>
-        <div class="service-desc">Full homepage rewrites, about pages, service pages, and landing pages built to convert visitors into leads from the first scroll.</div>
+        <div class="service-desc">Home, About, Services, FAQ, and Contact pages all written to convert. One consistent voice across every page of your site.</div>
         <div class="service-price">From $800</div>
       </div>
 
@@ -705,35 +775,42 @@ footer {
         <div class="service-icon">📧</div>
         <div class="service-name">Email Sequences</div>
         <div class="service-desc">Welcome flows, nurture campaigns, re-engagement sequences, and promotional emails that get opened and acted on.</div>
-        <div class="service-price">From $500</div>
+        <div class="service-price">From $400</div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">📱</div>
         <div class="service-name">Ad Copy</div>
-        <div class="service-desc">Facebook, Instagram, TikTok, and Google ad copy that stops the scroll and moves people to click. 5–10 variations per campaign.</div>
-        <div class="service-price">From $400</div>
+        <div class="service-desc">Facebook, Instagram, TikTok, and Google ad copy that stops the scroll and moves people to click. 10 variations per campaign.</div>
+        <div class="service-price">From $300</div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">🎯</div>
         <div class="service-name">Landing Pages</div>
-        <div class="service-desc">Single-purpose pages built around one offer, one CTA, and zero distractions. The highest-ROI copy investment you can make.</div>
-        <div class="service-price">From $400</div>
+        <div class="service-desc">Single purpose pages built around one offer, one CTA, and zero distractions. The highest ROI copy investment you can make.</div>
+        <div class="service-price">From $350</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <div class="service-name">SEO Blog Writing</div>
+        <div class="service-desc">Keyword optimized blog posts that rank on Google and bring consistent organic traffic to your site. 4 posts per month delivered on a schedule.</div>
+        <div class="service-price">From $500/mo</div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">📅</div>
         <div class="service-name">Monthly Retainer</div>
-        <div class="service-desc">Ongoing email and social copy on a fixed monthly scope. Consistent voice, consistent output, no re-briefing every time.</div>
+        <div class="service-desc">Ongoing email, social, and blog copy on a fixed monthly scope. Consistent voice, consistent output, no rebriefing every time.</div>
         <div class="service-price">From $1,000/mo</div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">✦</div>
         <div class="service-name">Full Package</div>
-        <div class="service-desc">Website + email sequence + ad copy delivered together. Best value for businesses launching or relaunching their marketing.</div>
-        <div class="service-price">From $2,000</div>
+        <div class="service-desc">Website copy plus email sequence plus ad copy delivered together. Best value for businesses launching or relaunching their marketing.</div>
+        <div class="service-price">From $1,500</div>
       </div>
 
     </div>
@@ -744,15 +821,15 @@ footer {
 <div class="section" id="portfolio">
   <div class="section-eyebrow">Portfolio</div>
   <h2 class="section-title">Work that converts</h2>
-  <p class="section-sub">Real spec rewrites showing the before and after across five industries.</p>
+  <p class="section-sub">Real before and after rewrites showing exactly what better copy looks like for your business.</p>
 
   <div class="portfolio-grid">
     <div class="port-card">
-      <div class="port-header" style="background: #FDF4FF;">💆‍♀️</div>
+      <div class="port-header" style="background: #FDF4FF;">💆</div>
       <div class="port-body">
         <div class="port-niche">Med Spa</div>
-        <div class="port-title">Najia's Skincare & Laser — Homepage Rewrite</div>
-        <div class="port-desc">Transformed generic "look and feel your best" copy into a patient-specific conversion page that addresses real fears and builds immediate trust.</div>
+        <div class="port-title">Najia's Skincare and Laser, Homepage Rewrite</div>
+        <div class="port-desc">Transformed generic "nourish and replenish" copy into a patient specific conversion page leading with 15 years of expertise and real trust signals.</div>
         <a href="specpitch_najias.html" class="port-link">View rewrite →</a>
       </div>
     </div>
@@ -761,20 +838,58 @@ footer {
       <div class="port-header" style="background: #FFF7ED;">🏠</div>
       <div class="port-body">
         <div class="port-niche">Real Estate</div>
-        <div class="port-title">Agent Email Sequence — Coming Soon</div>
-        <div class="port-desc">5-email welcome and nurture sequence for a real estate agent converting cold leads into booked calls within 10 days.</div>
-        <a href="#" class="port-link" style="color: var(--muted);">In progress →</a>
+        <div class="port-title">Gina Lamouth, Agent Website Rewrite</div>
+        <div class="port-desc">Rewrote a 20 year SWFL luxury agent's homepage from generic "passionate about helping" copy into a credential led conversion page that positions her as the obvious choice.</div>
+        <a href="specpitch_gina.html" class="port-link">View rewrite →</a>
       </div>
     </div>
 
     <div class="port-card">
-      <div class="port-header" style="background: #F0FDF4;">🌿</div>
+      <div class="port-header" style="background: #FFF7ED;">🌾</div>
       <div class="port-body">
         <div class="port-niche">Food Brand</div>
-        <div class="port-title">DTC Food Brand — Landing Page</div>
-        <div class="port-desc">Landing page rewrite for a natural food brand that doubled the emotional connection to the product before the first add-to-cart click.</div>
-        <a href="#" class="port-link" style="color: var(--muted);">In progress →</a>
+        <div class="port-title">Food DTC, Homepage Rewrite</div>
+        <div class="port-desc">Replaced a generic "we believe everyone deserves healthy food" homepage with a compelling farm to kitchen story that makes the direct producer relationship the emotional core of the brand.</div>
+        <a href="specpitch_fooddtc.html" class="port-link">View rewrite →</a>
       </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-header" style="background: #EFF6FF;">💻</div>
+      <div class="port-body">
+        <div class="port-niche">Brand Website</div>
+        <div class="port-title">Copi Creative, Full Website Build</div>
+        <div class="port-desc">Designed and wrote the full Copi Creative website including rotating niche headline, services, process, guarantee, and conversion focused CTA. Deployed on Vercel with custom domain.</div>
+        <a href="https://copicreative.co" class="port-link">View live site →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials-bg">
+  <div class="section" id="testimonials">
+    <div class="section-eyebrow">Client Results</div>
+    <h2 class="section-title">What clients say</h2>
+    <p class="section-sub">Real feedback from businesses that put their copy to the test.</p>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card pending">
+        <div class="testimonial-pending-icon">✦</div>
+        <div class="testimonial-pending-text">Client testimonials coming soon.<br>Be one of the first.</div>
+      </div>
+
+      <div class="testimonial-card pending">
+        <div class="testimonial-pending-icon">✦</div>
+        <div class="testimonial-pending-text">Client testimonials coming soon.<br>Be one of the first.</div>
+      </div>
+
+      <div class="testimonial-card pending">
+        <div class="testimonial-pending-icon">✦</div>
+        <div class="testimonial-pending-text">Client testimonials coming soon.<br>Be one of the first.</div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -784,14 +899,14 @@ footer {
   <div class="process-inner">
     <div class="section-eyebrow">How it works</div>
     <h2 class="section-title" style="color: var(--white);">Simple. Fast. Done.</h2>
-    <p class="section-sub">From first email to finished copy — most projects are complete within 5 business days.</p>
+    <p class="section-sub">From first email to finished copy, most projects are done within 5 business days.</p>
 
     <div class="process-steps">
       <div class="process-step">
         <div class="step-num">01</div>
         <div class="step-content">
           <div class="step-title">15-minute discovery call</div>
-          <div class="step-desc">We talk about your business, your goals, and what you need the copy to do. No prep required on your end — I ask the right questions.</div>
+          <div class="step-desc">We talk about your business, your goals, and what you need the copy to do. No prep required on your end. I ask the right questions.</div>
         </div>
         <div class="step-badge">Free</div>
       </div>
@@ -800,7 +915,7 @@ footer {
         <div class="step-num">02</div>
         <div class="step-content">
           <div class="step-title">Proposal + 50% deposit</div>
-          <div class="step-desc">I send a clear scope and price. You pay 50% to lock in your spot. No ambiguity, no surprise invoices — everything agreed upfront.</div>
+          <div class="step-desc">I send a clear scope and price. You pay 50% to lock in your spot. No ambiguity, no surprise invoices. Everything is agreed upfront.</div>
         </div>
         <div class="step-badge">Same day</div>
       </div>
@@ -809,7 +924,7 @@ footer {
         <div class="step-num">03</div>
         <div class="step-content">
           <div class="step-title">First draft in 48 hours</div>
-          <div class="step-desc">You receive a complete first draft — not an outline, not a partial — ready for your feedback. Most clients are happy at this stage.</div>
+          <div class="step-desc">You receive a complete first draft, not an outline, not a partial, ready for your feedback. Most clients are happy at this stage.</div>
         </div>
         <div class="step-badge">48 hrs</div>
       </div>
@@ -839,7 +954,7 @@ footer {
 <div class="guarantee">
   <div class="guarantee-icon">🛡️</div>
   <h2 class="guarantee-title">The no-risk guarantee</h2>
-  <p class="guarantee-text">If you're not happy with the first draft, I'll rewrite it completely — free. If you're still not satisfied after the revision, you don't owe me a cent for the remaining balance.</p>
+  <p class="guarantee-text">If you're not happy with the first draft, I'll rewrite it completely, free. If you're still not satisfied after the revision, you don't owe me a cent for the remaining balance.</p>
   <p class="guarantee-fine">I've never had to honor this. But it exists because you should never feel like you're taking a risk on copy you haven't seen yet.</p>
 </div>
 
@@ -847,7 +962,7 @@ footer {
 <div class="cta-section">
   <div class="cta-eyebrow">Ready to start?</div>
   <h2 class="cta-title">Your next client is one<br>good page <em>away</em></h2>
-  <p class="cta-sub">Book a free 15-minute call. No commitment, no pitch — just a conversation about what better copy could do for your business.</p>
+  <p class="cta-sub">Book a free 15-minute call. No commitment, no pitch. Just a conversation about what better copy could do for your business.</p>
   <div class="cta-actions">
     <a href="mailto:hello@copicreative.co" class="btn-white">Book a free call →</a>
     <a href="mailto:hello@copicreative.co" class="btn-outline-white">Send me a message</a>
@@ -871,11 +986,11 @@ footer {
   // Rotating hero headline
   const phrases = [
     "costing you clients.",
-    "losing med spa bookings.",
-    "missing real estate leads.",
-    "invisible to food buyers.",
-    "leaving money on the table.",
-    "sending clients elsewhere."
+    "losing roofing and HVAC jobs.",
+    "missing mortgage borrowers.",
+    "sending patients to other dentists.",
+    "letting insurance leads slip.",
+    "turning away pet owners."
   ];
   let idx = 0;
   const el = document.getElementById('rotatingText');

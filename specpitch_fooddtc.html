@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Homepage Rewrite for Food DTC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #FAF7F2;
+  --white: #FFFFFF;
+  --dark: #1C1812;
+  --body: #5C4F44;
+  --light: #A89880;
+  --border: #EAE0D0;
+  --orange: #E07B45;
+  --orange-light: #FDF0E8;
+  --green: #5A7A55;
+  --green-light: #EFF5EE;
+  --red-light: #FEF2F2;
+  --red: #DC2626;
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(28,24,18,0.06);
+  --shadow-md: 0 8px 32px rgba(28,24,18,0.10);
+  --shadow-lg: 0 20px 60px rgba(28,24,18,0.14);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--bg); color: var(--dark); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+.cover { background: var(--white); max-width: 680px; margin: 48px auto; padding: 48px 52px; border-radius: var(--r-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+.cover-from { font-size: 12px; color: var(--light); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.cover-greeting { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; color: var(--dark); margin-bottom: 20px; line-height: 1.3; }
+.cover p { font-size: 15px; color: var(--body); line-height: 1.8; margin-bottom: 16px; }
+.cover-highlight { background: var(--orange-light); border-left: 3px solid var(--orange); padding: 14px 18px; border-radius: 0 var(--r-sm) var(--r-sm) 0; margin: 20px 0; font-size: 14px; color: var(--dark); line-height: 1.7; }
+.cover-sig { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 14px; color: var(--body); }
+.cover-sig strong { display: block; font-size: 16px; color: var(--dark); margin-bottom: 2px; }
+.cover-sig span { color: var(--light); font-size: 12px; }
+
+.divider { text-align: center; padding: 40px 5%; }
+.divider-line { display: flex; align-items: center; gap: 16px; max-width: 700px; margin: 0 auto; }
+.divider-line::before, .divider-line::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.divider-text { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--light); white-space: nowrap; }
+
+.comparison { max-width: 1140px; margin: 0 auto; padding: 0 5% 60px; }
+.comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.comp-col { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+.comp-header { padding: 14px 24px; display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.comp-header.before { background: #FEF2F2; color: #B91C1C; }
+.comp-header.after { background: var(--orange-light); color: #92400E; }
+.comp-body { background: var(--white); border: 1px solid var(--border); border-top: none; padding: 28px; }
+
+.b-hero { background: #F5F5F0; border: 1px solid #E5E5E0; border-radius: var(--r-md); padding: 28px 24px; text-align: center; margin-bottom: 20px; }
+.b-eyebrow { font-size: 10px; color: #9CA3AF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+.b-h1 { font-size: 20px; font-weight: 700; color: #334155; margin-bottom: 10px; line-height: 1.3; }
+.b-sub { font-size: 13px; color: #64748B; line-height: 1.7; margin-bottom: 16px; }
+.b-cta { display: inline-block; background: #94A3B8; color: white; padding: 10px 22px; border-radius: 4px; font-size: 13px; font-weight: 600; }
+.b-mission { font-size: 13px; color: #6B7280; line-height: 1.7; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 6px; padding: 16px; margin-bottom: 14px; font-style: italic; }
+.b-cats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+.b-cat { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 6px; padding: 10px; text-align: center; font-size: 11px; color: #6B7280; }
+.flag-bad { background: #FEF2F2; border-radius: 6px; padding: 8px 12px; margin-top: 10px; font-size: 11px; color: #B91C1C; display: flex; gap: 6px; line-height: 1.5; }
+
+.a-hero { background: linear-gradient(160deg, #1C1812 0%, #2C2018 60%, #3A2A18 100%); padding: 32px 24px; border-radius: var(--r-md); margin-bottom: 20px; text-align: center; position: relative; overflow: hidden; }
+.a-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(224,123,69,0.15) 0%, transparent 70%); border-radius: 50%; }
+.a-eyebrow { font-size: 10px; color: var(--orange); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
+.a-h1 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: #FAF7F2; margin-bottom: 6px; line-height: 1.2; }
+.a-h1 em { color: var(--orange); font-style: italic; }
+.a-tagline { font-size: 12px; color: rgba(250,247,242,0.55); margin-bottom: 14px; letter-spacing: 0.04em; }
+.a-sub { font-size: 13px; color: rgba(250,247,242,0.70); line-height: 1.75; margin-bottom: 20px; }
+.a-cta-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.a-cta-primary { background: var(--orange); color: var(--dark); padding: 11px 22px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; display: inline-block; }
+.a-cta-secondary { background: transparent; color: rgba(250,247,242,0.8); border: 1px solid rgba(250,247,242,0.25); padding: 11px 22px; border-radius: 4px; font-size: 12px; display: inline-block; }
+.trust-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.trust-pill { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--body); background: var(--orange-light); border: 1px solid #E8D4B0; padding: 4px 10px; border-radius: 100px; }
+.trust-icon { color: var(--orange); font-size: 12px; }
+.a-story { font-size: 13px; color: var(--body); line-height: 1.75; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin-bottom: 14px; }
+.a-cats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+.a-cat { border-radius: var(--r-sm); padding: 12px 10px; border: 1px solid var(--border); background: var(--white); text-align: center; }
+.a-cat-eyebrow { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--orange); margin-bottom: 4px; }
+.a-cat-name { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 500; color: var(--dark); }
+.a-testimonial { background: var(--green-light); border-radius: var(--r-sm); padding: 16px; border: 1px solid #C8DCC5; }
+.a-quote { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-style: italic; color: var(--dark); line-height: 1.7; margin-bottom: 8px; }
+.a-author { font-size: 11px; font-weight: 700; color: var(--green); }
+.a-stars { color: var(--orange); font-size: 11px; margin-bottom: 5px; }
+.flag-good { background: var(--orange-light); border-radius: 6px; padding: 8px 12px; margin-top: 10px; font-size: 11px; color: #92400E; display: flex; gap: 6px; line-height: 1.5; font-weight: 500; }
+
+.strategy { max-width: 860px; margin: 0 auto; padding: 0 5% 60px; }
+.strategy-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 36px; box-shadow: var(--shadow-sm); }
+.strategy-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--dark); margin-bottom: 6px; }
+.strategy-sub { font-size: 14px; color: var(--body); margin-bottom: 28px; line-height: 1.7; }
+.changes { display: flex; flex-direction: column; gap: 16px; }
+.change { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.change-box { padding: 14px 16px; border-radius: var(--r-sm); }
+.change-box.bad { background: #FEF2F2; border: 1px solid #FECACA; }
+.change-box.good { background: var(--orange-light); border: 1px solid #E8D4B0; }
+.change-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 5px; }
+.change-box.bad .change-label { color: #B91C1C; }
+.change-box.good .change-label { color: #92400E; }
+.change-text { font-size: 13px; color: var(--dark); line-height: 1.6; }
+.change-note { font-size: 11px; color: var(--body); margin-top: 4px; line-height: 1.5; }
+
+.pitch-footer { background: var(--dark); padding: 56px 5%; text-align: center; }
+.pitch-footer-eyebrow { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; font-weight: 700; }
+.pitch-footer-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 3.5vw, 38px); font-weight: 400; color: #FAF7F2; margin-bottom: 10px; line-height: 1.25; }
+.pitch-footer-title em { color: var(--orange); font-style: italic; }
+.pitch-footer-sub { font-size: 14px; color: rgba(250,247,242,0.45); margin-bottom: 28px; }
+.pitch-footer-cta { background: var(--orange); color: var(--dark); padding: 14px 36px; border-radius: 4px; font-size: 14px; font-weight: 700; text-decoration: none; display: inline-block; }
+.pitch-footer-contact { margin-top: 20px; font-size: 12px; color: rgba(250,247,242,0.3); }
+
+@media (max-width: 768px) {
+  .cover { padding: 28px 24px; margin: 24px 16px; }
+  .comparison-grid { grid-template-columns: 1fr; }
+  .b-cats, .a-cats { grid-template-columns: 1fr; }
+  .change { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-from">
+    To: Food DTC | fooddtc.com<br>
+    From: Edo Walker | Copi Creative | hello@copicreative.co
+  </div>
+  <div class="cover-greeting">Hi Food DTC team,</div>
+  <p>What you have built is genuinely exciting. A curated marketplace connecting food lovers directly to independent artisanal producers, farms, and vineyards across the country. No warehouse. No middleman. Straight from the source to the door. That is a story worth telling.</p>
+  <p>But your homepage says "We believe that everyone deserves easy access to healthy food." That line appears on hundreds of food brand websites. It tells a first-time visitor almost nothing about what makes Food DTC different from every grocery delivery service they have already tried and forgotten.</p>
+  <div class="cover-highlight">
+    I rewrote your homepage completely and for free to show you what I mean. The rewrite below leads with your real story — the farmers, the vineyards, the artisans — and gives food lovers a compelling reason to shop with you instead of anyone else.
+  </div>
+  <p>No obligation. If it resonates, a quick 15 minute call is all it takes.</p>
+  <div class="cover-sig">
+    <strong>Edo Walker</strong>
+    Copi Creative<br>
+    <span>hello@copicreative.co | copicreative.co</span>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="divider-line">
+    <span class="divider-text">The rewrite</span>
+  </div>
+</div>
+
+<div class="comparison">
+  <div class="comparison-grid">
+
+    <div class="comp-col">
+      <div class="comp-header before">Current copy — what visitors see today</div>
+      <div class="comp-body">
+
+        <div class="b-hero">
+          <div class="b-eyebrow">Welcome to Food DTC</div>
+          <div class="b-h1">Everyone Deserves<br>Healthy Food</div>
+          <p class="b-sub">We believe that everyone deserves easy access to healthy food. Dedicated to providing quality nourishment at accessible prices.</p>
+          <div class="b-cta">Shop Now</div>
+        </div>
+        <div class="flag-bad">The headline and mission statement could belong to any food delivery app in the country. There is nothing here that tells a visitor why Food DTC exists or what makes it different.</div>
+
+        <div style="margin: 18px 0 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9CA3AF;">Our Mission</div>
+        <div class="b-mission">"We focus on making wholesome choices available to everyone. We believe in providing quality nourishment at accessible prices for all."</div>
+        <div class="flag-bad">This reads as a corporate values statement, not a reason to buy. "Wholesome choices" and "quality nourishment" are filler phrases that create no emotional pull.</div>
+
+        <div style="margin: 18px 0 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9CA3AF;">Categories</div>
+        <div class="b-cats">
+          <div class="b-cat">Pantry Staples</div>
+          <div class="b-cat">Specialty Items</div>
+          <div class="b-cat">Beverages</div>
+        </div>
+        <div class="flag-bad">Category labels with no context. Every food marketplace has pantry staples and beverages. Nothing here signals that these products come from real farms and artisans.</div>
+
+      </div>
+    </div>
+
+    <div class="comp-col">
+      <div class="comp-header after">Rewrite — copy that converts browsers into buyers</div>
+      <div class="comp-body">
+
+        <div class="a-hero">
+          <div class="a-eyebrow">Farm direct | Artisan made | Vineyard fresh</div>
+          <div class="a-h1">From the farm<br>to your kitchen.<br><em>No in between.</em></div>
+          <div class="a-tagline">Independent producers. Real ingredients. Shipped straight from the source.</div>
+          <p class="a-sub">Food DTC connects you directly to the artisans, farmers, and winemakers behind your food. Every product on this site was made by someone who cares deeply about what goes into it. You should know who that is.</p>
+          <div class="a-cta-group">
+            <div class="a-cta-primary">Meet the producers</div>
+            <div class="a-cta-secondary">Browse the marketplace</div>
+          </div>
+        </div>
+
+        <div class="trust-bar">
+          <div class="trust-pill"><span class="trust-icon">✦</span>Independent artisans only</div>
+          <div class="trust-pill"><span class="trust-icon">✦</span>Ships direct from source</div>
+          <div class="trust-pill"><span class="trust-icon">✦</span>No middlemen</div>
+          <div class="trust-pill"><span class="trust-icon">✦</span>Real provenance</div>
+        </div>
+        <div class="flag-good">Trust signals lead with what actually differentiates Food DTC. "No middlemen" and "ships direct from source" are concrete claims that create immediate understanding.</div>
+
+        <div style="margin: 18px 0 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--light);">Why it tastes different</div>
+        <div class="a-story">Most food travels through 3 to 5 intermediaries before it reaches your kitchen. Flavor, freshness, and story all get lost along the way. At Food DTC every product ships directly from the farmer, artisan, or vineyard who made it. That is not just better for the food. It is better for the people behind it.</div>
+        <div class="flag-good">This paragraph replaces the generic mission statement with a specific story about why the model matters. It educates the customer and creates emotional investment before they browse a single product.</div>
+
+        <div style="margin: 18px 0 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--light);">Shop by source</div>
+        <div class="a-cats">
+          <div class="a-cat">
+            <div class="a-cat-eyebrow">From the field</div>
+            <div class="a-cat-name">Farm Pantry</div>
+          </div>
+          <div class="a-cat">
+            <div class="a-cat-eyebrow">Handcrafted</div>
+            <div class="a-cat-name">Artisan Goods</div>
+          </div>
+          <div class="a-cat">
+            <div class="a-cat-eyebrow">Estate poured</div>
+            <div class="a-cat-name">Vineyard Wines</div>
+          </div>
+        </div>
+        <div class="flag-good">Categories are reframed around provenance not product type. "From the field" and "Estate poured" make the shopping experience feel like a visit to the source.</div>
+
+        <div class="a-testimonial">
+          <div class="a-stars">★★★★★</div>
+          <div class="a-quote">"I ordered olive oil from a small family farm in California. It arrived with a handwritten note from the farmer. I have never tasted anything like it. I will never buy grocery store olive oil again."</div>
+          <div class="a-author">Verified buyer | San Francisco, CA</div>
+        </div>
+        <div class="flag-good">The testimonial tells a story about the direct relationship between buyer and producer. That emotional connection is exactly what Food DTC sells and no generic food marketplace can replicate it.</div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="strategy">
+  <div class="strategy-card">
+    <h2 class="strategy-title">Five changes and why each one sells more food</h2>
+    <p class="strategy-sub">Every word in this rewrite is intentional. Here is the strategy behind the most important changes.</p>
+    <div class="changes">
+
+      <div class="change">
+        <div class="change-box bad">
+          <div class="change-label">Before</div>
+          <div class="change-text">"Everyone deserves healthy food"</div>
+          <div class="change-note">A values statement that applies to every food brand on the internet. Zero differentiation.</div>
+        </div>
+        <div class="change-box good">
+          <div class="change-label">After</div>
+          <div class="change-text">"From the farm to your kitchen. No in between."</div>
+          <div class="change-note">Communicates the entire business model in one line. The customer immediately understands what makes Food DTC different.</div>
+        </div>
+      </div>
+
+      <div class="change">
+        <div class="change-box bad">
+          <div class="change-label">Before</div>
+          <div class="change-text">"Wholesome choices available to everyone"</div>
+          <div class="change-note">Meaningless phrase that creates no emotional connection and explains nothing about the product.</div>
+        </div>
+        <div class="change-box good">
+          <div class="change-label">After</div>
+          <div class="change-text">"Every product on this site was made by someone who cares deeply about what goes into it. You should know who that is."</div>
+          <div class="change-note">Turns the transaction into a relationship. Customers are not buying food. They are buying from a person. That emotional hook drives repeat purchases.</div>
+        </div>
+      </div>
+
+      <div class="change">
+        <div class="change-box bad">
+          <div class="change-label">Before</div>
+          <div class="change-text">Categories: Pantry Staples, Specialty Items, Beverages</div>
+          <div class="change-note">Functional labels that every marketplace uses. No story, no differentiation.</div>
+        </div>
+        <div class="change-box good">
+          <div class="change-label">After</div>
+          <div class="change-text">Categories: Farm Pantry, Artisan Goods, Vineyard Wines with source labels</div>
+          <div class="change-note">Provenance-first categorization makes browsing feel like a trip to a farmers market. The source is the selling point.</div>
+        </div>
+      </div>
+
+      <div class="change">
+        <div class="change-box bad">
+          <div class="change-label">Before</div>
+          <div class="change-text">Single "Shop Now" CTA</div>
+          <div class="change-note">High pressure and generic. Gives a first time visitor no reason to click over exploring.</div>
+        </div>
+        <div class="change-box good">
+          <div class="change-label">After</div>
+          <div class="change-text">"Meet the producers" primary CTA</div>
+          <div class="change-note">Leads with the story before the sale. Visitors who meet the farmers first are far more likely to buy from them.</div>
+        </div>
+      </div>
+
+      <div class="change">
+        <div class="change-box bad">
+          <div class="change-label">Before</div>
+          <div class="change-text">No social proof or customer story</div>
+          <div class="change-note">New visitors have no reason to trust a marketplace they have never heard of.</div>
+        </div>
+        <div class="change-box good">
+          <div class="change-label">After</div>
+          <div class="change-text">Testimonial that tells the story of a direct producer relationship</div>
+          <div class="change-note">A handwritten note from a farmer is something no Whole Foods can offer. The testimonial makes that point better than any headline could.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="pitch-footer">
+  <div class="pitch-footer-eyebrow">Next step</div>
+  <div class="pitch-footer-title">Let's talk about what better copy<br>could do for <em>Food DTC</em></div>
+  <p class="pitch-footer-sub">15 minutes. No commitment. Just a conversation about whether this is worth pursuing.</p>
+  <a href="mailto:hello@copicreative.co" class="pitch-footer-cta">Book a free 15 min call</a>
+  <div class="pitch-footer-contact">Edo Walker | hello@copicreative.co | copicreative.co</div>
+</div>
+
+</body>
+</html>

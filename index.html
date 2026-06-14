@@ -441,6 +441,74 @@ nav {
   gap: 4px;
 }
 
+/* ── TESTIMONIALS ── */
+.testimonials-bg { background: var(--white); border-top: 1px solid var(--border); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.testimonial-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-stars { color: var(--blue); font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+.testimonial-quote {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--dark);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.testimonial-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+.testimonial-name { font-size: 13px; font-weight: 600; color: var(--dark); }
+.testimonial-role { font-size: 11px; color: var(--muted); }
+.testimonial-card.pending {
+  border: 1px dashed var(--border-blue);
+  background: var(--blue-xlight);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 220px;
+}
+.testimonial-pending-text {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.testimonial-pending-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--white);
+  border: 1px solid var(--border-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin: 0 auto 14px;
+}
+
+@media (max-width: 768px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+
 /* ── PROCESS ── */
 .process-bg { background: var(--dark); }
 .process-inner { max-width: 900px; margin: 0 auto; padding: 80px 6%; }
@@ -599,6 +667,7 @@ footer {
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#portfolio">Portfolio</a>
+    <a href="#testimonials">Reviews</a>
     <a href="#process">Process</a>
     <a href="mailto:hello@copicreative.co" class="nav-cta">Book a call →</a>
   </div>
@@ -799,6 +868,34 @@ footer {
         <div class="port-desc">Designed and wrote the full Copi Creative website including rotating niche headline, services, process, guarantee, and conversion focused CTA. Deployed on Vercel with custom domain.</div>
         <a href="https://copicreative.co" class="port-link">View live site →</a>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials-bg">
+  <div class="section" id="testimonials">
+    <div class="section-eyebrow">Client Results</div>
+    <h2 class="section-title">What clients say</h2>
+    <p class="section-sub">Real feedback from businesses that put their copy to the test.</p>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card pending">
+        <div class="testimonial-pending-icon">✦</div>
+        <div class="testimonial-pending-text">Client testimonials coming soon.<br>Be one of the first.</div>
+      </div>
+
+      <div class="testimonial-card pending">
+        <div class="testimonial-pending-icon">✦</div>
+        <div class="testimonial-pending-text">Client testimonials coming soon.<br>Be one of the first.</div>
+      </div>
+
+      <div class="testimonial-card pending">
+        <div class="testimonial-pending-icon">✦</div>
+        <div class="testimonial-pending-text">Client testimonials coming soon.<br>Be one of the first.</div>
+      </div>
+
     </div>
   </div>
 </div>

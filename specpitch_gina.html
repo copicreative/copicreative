@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Website Rewrite for Gina Lamouth Littrell | SWFL Realtor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F7F8FA;
+  --white: #FFFFFF;
+  --navy: #1A2332;
+  --navy-mid: #2D3F55;
+  --gold: #C9A55A;
+  --gold-light: #F7F0E0;
+  --warm: #F5EFE6;
+  --dark: #1A2332;
+  --body: #4A5568;
+  --light: #94A3B8;
+  --border: #E2E8F0;
+  --border-warm: #DDD0BC;
+  --red-light: #FEF2F2;
+  --red: #DC2626;
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(26,35,50,0.06);
+  --shadow-md: 0 8px 32px rgba(26,35,50,0.10);
+  --shadow-lg: 0 20px 60px rgba(26,35,50,0.14);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--bg); color: var(--dark); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+.cover { background: var(--white); max-width: 680px; margin: 48px auto; padding: 48px 52px; border-radius: var(--r-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+.cover-from { font-size: 12px; color: var(--light); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.cover-greeting { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; color: var(--dark); margin-bottom: 20px; line-height: 1.3; }
+.cover p { font-size: 15px; color: var(--body); line-height: 1.8; margin-bottom: 16px; }
+.cover-highlight { background: var(--gold-light); border-left: 3px solid var(--gold); padding: 14px 18px; border-radius: 0 var(--r-sm) var(--r-sm) 0; margin: 20px 0; font-size: 14px; color: var(--dark); line-height: 1.7; }
+.cover-sig { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 14px; color: var(--body); }
+.cover-sig strong { display: block; font-size: 16px; color: var(--dark); margin-bottom: 2px; }
+.cover-sig span { color: var(--light); font-size: 12px; }
+
+.divider { text-align: center; padding: 40px 5%; }
+.divider-line { display: flex; align-items: center; gap: 16px; max-width: 700px; margin: 0 auto; }
+.divider-line::before, .divider-line::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.divider-text { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--light); white-space: nowrap; }
+
+.comparison { max-width: 1140px; margin: 0 auto; padding: 0 5% 60px; }
+.comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.comp-col { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+.comp-header { padding: 14px 24px; display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.comp-header.before { background: #FEF2F2; color: #B91C1C; }
+.comp-header.after { background: var(--gold-light); color: #92400E; }
+.comp-body { background: var(--white); border: 1px solid var(--border); border-top: none; padding: 28px; }
+
+/* BEFORE */
+.b-hero { background: #F1F5F9; border: 1px solid #E2E8F0; border-radius: var(--r-md); padding: 28px 24px; text-align: center; margin-bottom: 20px; }
+.b-h1 { font-size: 20px; font-weight: 700; color: #334155; margin-bottom: 8px; line-height: 1.3; }
+.b-sub { font-size: 13px; color: #64748B; line-height: 1.7; margin-bottom: 8px; }
+.b-cta { display: inline-block; background: #94A3B8; color: white; padding: 10px 22px; border-radius: 4px; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.b-bio { font-size: 12px; color: #6B7280; line-height: 1.7; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 6px; padding: 14px; margin-bottom: 14px; }
+.b-services { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.b-service { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 6px; padding: 12px; }
+.b-sname { font-size: 12px; font-weight: 600; color: #4B5563; margin-bottom: 3px; }
+.b-sdesc { font-size: 11px; color: #9CA3AF; line-height: 1.5; }
+.flag-bad { background: #FEF2F2; border-radius: 6px; padding: 8px 12px; margin-top: 10px; font-size: 11px; color: #B91C1C; display: flex; gap: 6px; line-height: 1.5; }
+
+/* AFTER */
+.a-hero { background: linear-gradient(160deg, #1A2332 0%, #243448 60%, #1A2F4A 100%); padding: 32px 24px; border-radius: var(--r-md); margin-bottom: 20px; text-align: center; position: relative; overflow: hidden; }
+.a-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(201,165,90,0.15) 0%, transparent 70%); border-radius: 50%; }
+.a-eyebrow { font-size: 10px; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
+.a-h1 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: #F7F8FA; margin-bottom: 6px; line-height: 1.25; }
+.a-h1 em { color: var(--gold); font-style: italic; }
+.a-tagline { font-size: 12px; color: rgba(247,248,250,0.55); margin-bottom: 14px; letter-spacing: 0.04em; }
+.a-sub { font-size: 13px; color: rgba(247,248,250,0.70); line-height: 1.75; margin-bottom: 20px; }
+.a-cta-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.a-cta-primary { background: var(--gold); color: var(--dark); padding: 11px 22px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; display: inline-block; }
+.a-cta-secondary { background: transparent; color: rgba(247,248,250,0.8); border: 1px solid rgba(247,248,250,0.25); padding: 11px 22px; border-radius: 4px; font-size: 12px; display: inline-block; }
+.trust-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.trust-pill { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--body); background: var(--gold-light); border: 1px solid var(--border-warm); padding: 4px 10px; border-radius: 100px; }
+.trust-icon { color: var(--gold); font-size: 12px; }
+.a-bio { font-size: 13px; color: var(--body); line-height: 1.75; background: var(--warm); border: 1px solid var(--border-warm); border-radius: 6px; padding: 16px; margin-bottom: 14px; font-style: italic; }
+.a-services { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.a-service { border-radius: var(--r-sm); padding: 14px; border: 1px solid var(--border); background: var(--bg); }
+.a-seyebrow { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 5px; }
+.a-sname { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
+.a-sdesc { font-size: 11px; color: var(--body); line-height: 1.55; }
+.a-testimonial { background: var(--warm); border-radius: var(--r-sm); padding: 16px; border: 1px solid var(--border-warm); }
+.a-quote { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-style: italic; color: var(--dark); line-height: 1.7; margin-bottom: 8px; }
+.a-author { font-size: 11px; font-weight: 700; color: var(--navy-mid); }
+.a-stars { color: var(--gold); font-size: 11px; margin-bottom: 5px; }
+.flag-good { background: var(--gold-light); border-radius: 6px; padding: 8px 12px; margin-top: 10px; font-size: 11px; color: #92400E; display: flex; gap: 6px; line-height: 1.5; font-weight: 500; }
+
+.strategy { max-width: 860px; margin: 0 auto; padding: 0 5% 60px; }
+.strategy-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 36px; box-shadow: var(--shadow-sm); }
+.strategy-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--dark); margin-bottom: 6px; }
+.strategy-sub { font-size: 14px; color: var(--body); margin-bottom: 28px; line-height: 1.7; }
+.changes { display: flex; flex-direction: column; gap: 16px; }
+.change { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.change-box { padding: 14px 16px; border-radius: var(--r-sm); }
+.change-box.bad { background: #FEF2F2; border: 1px solid #FECACA; }
+.change-box.good { background: var(--gold-light); border: 1px solid var(--border-warm); }
+.change-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 5px; }
+.change-box.bad .change-label { color: #B91C1C; }
+.change-box.good .change-label { color: #92400E; }
+.change-text { font-size: 13px; color: var(--dark); line-height: 1.6; }
+.change-note { font-size: 11px; color: var(--body); margin-top: 4px; line-height: 1.5; }
+
+.pitch-footer { background: var(--navy); padding: 56px 5%; text-align: center; }
+.pitch-footer-eyebrow { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; font-weight: 700; }
+.pitch-footer-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 3.5vw, 38px); font-weight: 400; color: #F7F8FA; margin-bottom: 10px; line-height: 1.25; }
+.pitch-footer-title em { color: var(--gold); font-style: italic; }
+.pitch-footer-sub { font-size: 14px; color: rgba(247,248,250,0.45); margin-bottom: 28px; }
+.pitch-footer-cta { background: var(--gold); color: var(--dark); padding: 14px 36px; border-radius: 4px; font-size: 14px; font-weight: 700; text-decoration: none; display: inline-block; }
+.pitch-footer-contact { margin-top: 20px; font-size: 12px; color: rgba(247,248,250,0.3); }
+
+@media (max-width: 768px) {
+  .cover { padding: 28px 24px; margin: 24px 16px; }
+  .comparison-grid { grid-template-columns: 1fr; }
+  .b-services, .a-services { grid-template-columns: 1fr; }
+  .change { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-from">
+    To: Gina Lamouth Littrell | SWFL Realtor | Bonita Springs, FL<br>
+    From: Edo Walker | Copi Creative | hello@copicreative.co
+  </div>
+  <div class="cover-greeting">Hi Gina,</div>
+  <p>I came across your profile while researching top real estate agents in Southwest Florida and your background stopped me. Twenty-plus years in the business, luxury waterfront properties, golf communities, international buyers, and a founding board member of NAHREP Naples. That's not a resume that's a track record very few agents anywhere can match.</p>
+  <p>But here's the thing your website and bio copy doesn't reflect any of that. Right now your bio says you're "passionate about helping you find your dream home" and "dedicated to delivering exceptional service." That's the same language on thousands of agent profiles across the country. It completely buries what actually makes you different.</p>
+  <div class="cover-highlight">
+    I rewrote your website homepage and bio copy completely free to show you what I mean. The rewrite below uses your real credentials, your real market expertise, and your real story to give buyers and sellers a compelling reason to choose you over every other agent that shows up in their search.
+  </div>
+  <p>No obligation on your end. If it resonates, a quick 15-minute call is all it takes to see if working together makes sense.</p>
+  <div class="cover-sig">
+    <strong>Edo Walker</strong>
+    Copi Creative<br>
+    <span>hello@copicreative.co | copicreative.co</span>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="divider-line">
+    <span class="divider-text">The rewrite</span>
+  </div>
+</div>
+
+<div class="comparison">
+  <div class="comparison-grid">
+
+    <div class="comp-col">
+      <div class="comp-header before">Current copy what buyers and sellers see today</div>
+      <div class="comp-body">
+
+        <div class="b-hero">
+          <div class="b-h1">Find Your Dream Home<br>in Southwest Florida</div>
+          <p class="b-sub">Experienced realtor committed to delivering exceptional service. Let's find your perfect home together.</p>
+          <div class="b-cta">Contact Gina</div>
+        </div>
+        <div class="flag-bad">⚠ "Find your dream home" and "exceptional service" appear on virtually every agent site in Florida. No buyer or seller can tell you apart from the agent right below you in search results.</div>
+
+        <div style="margin: 18px 0 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9CA3AF;">About Gina</div>
+        <div class="b-bio">Active Real Estate Agent since 2003 helping buyers, sellers, builders and investors achieve their real estate goals. My team covers SW Florida (Naples, Marco Island, Bonita Springs, Estero & Fort Myers). I hold CDPE, ABR, GRI & CIPS designations and am a founding board member of NAHREP Naples.</div>
+        <div class="flag-bad">⚠ This reads like a LinkedIn summary, not a sales page. The credentials are impressive but they're buried in a paragraph with no context for why they matter to the client.</div>
+
+        <div style="margin: 18px 0 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9CA3AF;">I Can Help With</div>
+        <div class="b-services">
+          <div class="b-service">
+            <div class="b-sname">Buying</div>
+            <div class="b-sdesc">Helping buyers find their perfect home in SWFL.</div>
+          </div>
+          <div class="b-service">
+            <div class="b-sname">Selling</div>
+            <div class="b-sdesc">Getting sellers the best price for their property.</div>
+          </div>
+          <div class="b-service">
+            <div class="b-sname">Investing</div>
+            <div class="b-sdesc">Helping investors find the right opportunities.</div>
+          </div>
+          <div class="b-service">
+            <div class="b-sname">Relocation</div>
+            <div class="b-sdesc">Making your move to SWFL smooth and easy.</div>
+          </div>
+        </div>
+        <div class="flag-bad">⚠ Generic one-liners with zero specificity. Every agent in Florida offers buying, selling, investing, and relocation help this tells the client nothing about Gina's actual edge.</div>
+
+      </div>
+    </div>
+
+    <div class="comp-col">
+      <div class="comp-header after">Rewrite copy that wins listings and closes buyers</div>
+      <div class="comp-body">
+
+        <div class="a-hero">
+          <div class="a-eyebrow">✦ SW Florida's Luxury & Waterfront Specialist | Since 2003</div>
+          <div class="a-h1">Southwest Florida isn't just a market.<br>It's a <em>lifestyle</em> and I know every inch of it.</div>
+          <div class="a-tagline">Naples | Marco Island | Bonita Springs | Estero | Fort Myers</div>
+          <p class="a-sub">20+ years. Luxury homes. Waterfront properties. Golf communities. International clients. When you work with Gina Lamouth Littrell, you're not just getting an agent you're getting someone who has lived and breathed Southwest Florida real estate since 2003.</p>
+          <div class="a-cta-group">
+            <div class="a-cta-primary">Let's talk about your goals →</div>
+            <div class="a-cta-secondary">See recent sales</div>
+          </div>
+        </div>
+
+        <div class="trust-bar">
+          <div class="trust-pill"><span class="trust-icon">✦</span>20+ years in SWFL</div>
+          <div class="trust-pill"><span class="trust-icon">✦</span>Luxury & waterfront specialist</div>
+          <div class="trust-pill"><span class="trust-icon">✦</span>CDPE | ABR | GRI | CIPS</div>
+          <div class="trust-pill"><span class="trust-icon">✦</span>International buyer expertise</div>
+        </div>
+        <div class="flag-good">✦ Trust signals are now front and center not buried. "20+ years in SWFL" immediately signals local authority. The niche labels (luxury, waterfront) attract the right clients and repel the wrong ones.</div>
+
+        <div style="margin: 18px 0 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--light);">Why clients choose Gina</div>
+        <div class="a-bio">"I didn't just move to Southwest Florida I fell in love with it. Since 2003 I've helped hundreds of buyers, sellers, and investors navigate one of the most desirable real estate markets in the country. Whether you're relocating from out of state, searching for a waterfront retreat, or building a portfolio, I bring the kind of local knowledge and market instinct that only comes from two decades of doing this every single day."</div>
+        <div class="flag-good">✦ First-person story creates an emotional connection. The client now feels they know Gina before they've spoken to her which is exactly what converts a browser into a lead.</div>
+
+        <div style="margin: 18px 0 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--light);">Where I specialize</div>
+        <div class="a-services">
+          <div class="a-service">
+            <div class="a-seyebrow">My strongest niche</div>
+            <div class="a-sname">Waterfront & Luxury</div>
+            <div class="a-sdesc">From beachfront estates to private dock properties I've closed hundreds of luxury transactions across SWFL's most coveted communities.</div>
+          </div>
+          <div class="a-service">
+            <div class="a-seyebrow">Growing market</div>
+            <div class="a-sname">Golf Communities</div>
+            <div class="a-sdesc">Naples, Bonita Springs, and Estero have some of the finest golf real estate in the country. I know every community, every fee structure, every nuance.</div>
+          </div>
+          <div class="a-service">
+            <div class="a-seyebrow">Specialized expertise</div>
+            <div class="a-sname">International Buyers</div>
+            <div class="a-sdesc">CIPS-certified for cross border transactions. I've helped buyers from Canada, Europe, and Latin America navigate the SWFL market with confidence.</div>
+          </div>
+          <div class="a-service">
+            <div class="a-seyebrow">Seamless process</div>
+            <div class="a-sname">Relocation to SWFL</div>
+            <div class="a-sdesc">Moving to paradise shouldn't be stressful. I handle everything from virtual tours to remote closings so your transition is as smooth as the Gulf.</div>
+          </div>
+        </div>
+        <div class="flag-good">✦ Each specialty leads with a credibility label and outcome-focused description. "I know every community, every fee structure" signals depth of knowledge that generic agents can't claim.</div>
+
+        <div class="a-testimonial">
+          <div class="a-stars">★★★★★</div>
+          <div class="a-quote">"I was relocating from New York and had never bought property in Florida. Gina made the entire process feel effortless. She knew exactly which communities matched our lifestyle and budget and she was right. We love our home."</div>
+          <div class="a-author"> Verified client | Relocated from New York | Bonita Springs</div>
+        </div>
+        <div class="flag-good">✦ Testimonial mirrors the exact client profile most likely to find Gina out of state relocators. This creates instant identification: "That sounds just like me."</div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="strategy">
+  <div class="strategy-card">
+    <h2 class="strategy-title">Six changes and why each one wins more clients</h2>
+    <p class="strategy-sub">Every word in this rewrite is intentional. Here's the copywriting strategy behind the most important changes.</p>
+    <div class="changes">
+
+      <div class="change">
+        <div class="change-box bad">
+          <div class="change-label">❌ Before</div>
+          <div class="change-text">"Find Your Dream Home in Southwest Florida"</div>
+          <div class="change-note">Used by hundreds of SWFL agents. Doesn't differentiate Gina from anyone else in the search results.</div>
+        </div>
+        <div class="change-box good">
+          <div class="change-label">✦ After</div>
+          <div class="change-text">"Southwest Florida isn't just a market. It's a lifestyle and I know every inch of it."</div>
+          <div class="change-note">Positions Gina as a lifestyle authority, not just a transaction facilitator. That framing commands higher commissions and better clients.</div>
+        </div>
+      </div>
+
+      <div class="change">
+        <div class="change-box bad">
+          <div class="change-label">❌ Before</div>
+          <div class="change-text">"Passionate about helping you find your dream home"</div>
+          <div class="change-note">The single most overused phrase in real estate marketing. Clients have become completely blind to it.</div>
+        </div>
+        <div class="change-box good">
+          <div class="change-label">✦ After</div>
+          <div class="change-text">"20+ years. Luxury homes. Waterfront properties. Golf communities. International clients."</div>
+          <div class="change-note">Specific credentials replace vague passion claims. Specificity builds trust in 5 seconds before the client reads another word.</div>
+        </div>
+      </div>
+
+      <div class="change">
+        <div class="change-box bad">
+          <div class="change-label">❌ Before</div>
+          <div class="change-text">Credential list with no context (CDPE, ABR, GRI, CIPS)</div>
+          <div class="change-note">Most buyers and sellers have no idea what these designations mean so they get ignored.</div>
+        </div>
+        <div class="change-box good">
+          <div class="change-label">✦ After</div>
+          <div class="change-text">"CIPS-certified for cross border transactions. I've helped buyers from Canada, Europe, and Latin America..."</div>
+          <div class="change-note">Translates the credential into a real world benefit. Now the international buyer immediately knows Gina is the right choice.</div>
+        </div>
+      </div>
+
+      <div class="change">
+        <div class="change-box bad">
+          <div class="change-label">❌ Before</div>
+          <div class="change-text">Generic bio written in third person</div>
+          <div class="change-note">Third person bios feel corporate and distant the opposite of what wins trust in real estate.</div>
+        </div>
+        <div class="change-box good">
+          <div class="change-label">✦ After</div>
+          <div class="change-text">First-person story: "I didn't just move to Southwest Florida I fell in love with it."</div>
+          <div class="change-note">First person is warmer, more trustworthy, and more memorable. Clients hire people they feel connected to.</div>
+        </div>
+      </div>
+
+      <div class="change">
+        <div class="change-box bad">
+          <div class="change-label">❌ Before</div>
+          <div class="change-text">"Helping buyers find their perfect home in SWFL"</div>
+          <div class="change-note">Describes what Gina does, not why she does it better than anyone else.</div>
+        </div>
+        <div class="change-box good">
+          <div class="change-label">✦ After</div>
+          <div class="change-text">"I've closed hundreds of luxury transactions across SWFL's most coveted communities"</div>
+          <div class="change-note">Volume and specificity create authority. "Hundreds of transactions" in luxury real estate is a powerful trust signal very few agents can claim.</div>
+        </div>
+      </div>
+
+      <div class="change">
+        <div class="change-box bad">
+          <div class="change-label">❌ Before</div>
+          <div class="change-text">No testimonial or social proof</div>
+          <div class="change-note">In real estate, trust is everything. Without social proof, a new client has no reason to choose Gina over the next agent in their search.</div>
+        </div>
+        <div class="change-box good">
+          <div class="change-label">✦ After</div>
+          <div class="change-text">Out-of-state relocator testimonial that mirrors the ideal client profile</div>
+          <div class="change-note">When a prospect reads a story that sounds exactly like their own situation, they stop comparing agents. The decision is already made.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="pitch-footer">
+  <div class="pitch-footer-eyebrow">✦ Next step</div>
+  <div class="pitch-footer-title">Let's talk about what this could do<br>for your <em>listings</em></div>
+  <p class="pitch-footer-sub">15 minutes. No commitment. Just a conversation about whether better copy is worth pursuing.</p>
+  <a href="mailto:hello@copicreative.co" class="pitch-footer-cta">Book a free 15-min call →</a>
+  <div class="pitch-footer-contact">Edo Walker | hello@copicreative.co | copicreative.co</div>
+</div>
+
+</body>
+</html>
